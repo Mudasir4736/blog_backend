@@ -132,10 +132,7 @@ pre{
         display: block;
       }
 
-/* .FGridCont {    
-    grid-template-columns: auto auto auto auto;
-    gap: 10px;
-} */
+
 
 .FSecCon {
     position: relative;
@@ -180,22 +177,7 @@ pre{
       gap: 1px;
   }
   
-  /* .FGridCont {
-    display: block;
-  }
-.TheMainFooter{
-    font-size: 11px;
-}
 
-.lastFText{
-    font-size: 10px;
-}
-
-.Fcontact{
-    padding-top: 2.2rem;
-    gap: 2px;
-}
- */
 
 .theFWidth {
     width: 95%;
