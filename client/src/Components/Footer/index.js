@@ -17,8 +17,7 @@ const Footer = () => {
       <div className="FmiddleCon">
         <div className="FmiddleSubCon">
           <div className="FDescription">
-            An All in one blog, bringing you the best of entertainment, knowledge
-            and inspiration.
+          Short and precise, yet descriptive.
           </div>
           <div className="FCopywrite">
             <span>©</span>2023.The Siren. All Rights reserved
@@ -30,10 +29,10 @@ const Footer = () => {
       <div className="Fcontact">
         <h3>Contact</h3>
         <div>
-          <span className="LocEmoji">📍</span> 101, Indiranagar, Bangalore.
+          <span className="LocEmoji">📍</span> 105, Baramulla, Kashmir.
         </div>
         <div>
-          <span className="PhoneEmoji">📞</span> +91 8080 1818
+          <span className="PhoneEmoji">📞</span> +91 729806510
         </div>
         <div className="lastFText">
           <pre><span className="MailEmoji">✉ </span>  support@thesiren.com</pre>

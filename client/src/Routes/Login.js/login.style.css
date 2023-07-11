@@ -19,11 +19,11 @@
     display: flex;
     flex-direction: column;
     /* gap: 25px; */
-    background-color: #b1cee7;
+    background-color: #468B97;
     width: 25%;
     min-width: 21rem;
     /* height: 50%; */
-    height: 16rem;
+    height: 26rem;
     justify-content: center;
     align-items: center;
     border-radius: 20px;
