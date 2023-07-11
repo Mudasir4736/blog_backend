@@ -24,7 +24,7 @@ axios.get(API,data)
     if( localStorage.getItem("token")){
       navi(`/Bollywood/${d.id}`, {state: d})
     } else{
-      alert("Please login/signup first")
+      navi("/signup")
     }
   }
 

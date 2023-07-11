@@ -3,7 +3,7 @@ import "../../App.css";
 import { useNavigate, useLocation } from "react-router-dom";
 import { AppData } from "../../Utility";
 import axios from "axios";
-import { AllData } from "../../constants/ApiList";
+import { AllData, localhostallData } from "../../constants/ApiList";
 
 
 function Banner(props) {
@@ -32,7 +32,7 @@ function Banner(props) {
     if (localStorage.getItem("token")) {
       navi(`/${d.cat}/${d.id}`, { state: d });
     } else {
-      alert("Please login/signup first");
+      navi("/signup");
     }
   };
 

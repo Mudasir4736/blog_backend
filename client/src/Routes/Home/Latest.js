@@ -5,7 +5,7 @@ import { AppData } from "../../Utility";
 import { DateExt } from "../../Components";
 import "../../App.css";
 import axios from "axios";
-import { AllData } from "../../constants/ApiList";
+import { AllData, localhostallData } from "../../constants/ApiList";
 
 const Latest = () => {
   const [data, setData] = useState([]);
@@ -15,6 +15,7 @@ const Latest = () => {
   useEffect(() => {
     // const API = "https://blog-server-oxr9.onrender.com";
     const API =AllData
+    // const API =localhostallData
     axios
       .get(API, data)
       .then((res) => setData(res.data[0]))
@@ -27,7 +28,7 @@ const Latest = () => {
     if (localStorage.getItem("token")) {
       navi(`/${d.cat}/${d.id}`, { state: d });
     } else {
-      alert("Please login/signup first");
+      navi("/signup");
     }
   };
 

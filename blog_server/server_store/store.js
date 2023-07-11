@@ -2,6 +2,7 @@ const data = [
     
     
      
+   
   {id:1, 
     ide: 1,
     cat: "Hollywood",

@@ -24,7 +24,7 @@ function HollyTopPost() {
     if (localStorage.getItem("token")) {
       navi(`/Hollywood/${d.id}`, { state: d });
     } else {
-      alert("Please login/signup first");
+      navi("/signup")
     }
   };
 

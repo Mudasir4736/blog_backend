@@ -1,19 +1,19 @@
 
 
-const localhostallData = "http://localhost:4040"
+const localhostallData = "http://localhost:5000"
 
 
-const localhostSignup ="http://localhost:4040/user/signup"
-const localhostLogin ="http://localhost:4040/user/login"
-const localhostAuth ="http://localhost:4040/user/auth"
-const localhostLogout = "http://localhost:4040/user/logout"
+const localhostSignup ="http://localhost:5000/user/signup"
+const localhostLogin ="http://localhost:5000/user/login"
+const localhostAuth ="http://localhost:5000/user/auth"
+const localhostLogout = "http://localhost:5000/user/logout"
 
-const SignupApi = "https://blog-server-sknv.onrender.com/user/signup"
-const LoginApi = "https://blog-server-sknv.onrender.com/user/login"
-const AuthApi= "https://blog-server-sknv.onrender.com/user/auth"
-const LogoutApi = "https://blog-server-sknv.onrender.com/user/logout"
+const SignupApi = "https://the-siren-backend.onrender.com/user/signup"
+const LoginApi = "https://the-siren-backend.onrender.com/user/login"
+const AuthApi= "https://the-siren-backend.onrender.com/user/auth"
+const LogoutApi = "https://the-siren-backend.onrender.com/user/logout"
 
-const AllData = "https://blog-server-sknv.onrender.com"
+const AllData = "https://the-siren-backend.onrender.com"
 
 
 

@@ -25,7 +25,7 @@ axios.get(API,data)
     if( localStorage.getItem("token")){
       navi(`/Fitness/${d.id}`, {state: d})
     } else{
-      alert("Please login/signup first")
+      navi("/signup")
     }
   }
  
