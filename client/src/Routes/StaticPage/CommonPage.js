@@ -28,7 +28,7 @@ const CommonPage = () => {
         <div className='mainContainer blogDescrCont'>
         <div className='commonContainer'>
             <div>
-                <h1 className='theComHeading'>{location.state.title}</h1>
+                <h1 className='theComHeading'>{"Hi", location.state.title}</h1>
             </div>
             <div className='commonProfile'>
                 <div className='commonPic1'>

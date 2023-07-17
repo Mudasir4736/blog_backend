@@ -73,7 +73,7 @@ function Signup() {
         <form className="SignupForm">
           <img
             className="lockImg"
-            src="https://www.freeiconspng.com/thumbs/secure-icon-png/lock-icon-17.png"
+            src="https://cdn3.vectorstock.com/i/1000x1000/00/47/lock-icon-vector-13820047.jpg"
             alt="Locked"
           />
           <input

@@ -1,80 +1,44 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./login.style.css";
 import { useNavigate, NavLink } from "react-router-dom";
 import axios from "axios";
-import { LoginApi, localhostLogin } from "../../constants/ApiList";
+import { LoginApi } from "../../constants/ApiList";
 
 function Login() {
   const navigate = useNavigate();
   const [error, setError] = useState(null);
-  const [email,setEmail] = useState("")
-  const [password,setPassword] = useState("")
-  // const [formdata, setFormdata] = useState({
-  //   email: "",
-  //   password: "",
-  // });
-  const [store, setStore] = useState(null);
+  const [formData, setFormData] = useState({ email: "", password: "" });
 
-  // const handleChange = (event) => {
-  //   const { name, value } = event.target;
-  //   setFormdata((prevformdata) => ({
-  //     ...prevformdata,
-  //     [name]: value,
-  //   }));
-    // console.log(formdata);
-  // };
-
-  const handleEmail=(event)=>{
-    setEmail(event.target.value)
-  }
-
-  const handlePassword=(event)=>{
-    setPassword(event.target.value)
-  }
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    setFormData((prevFormData) => ({ ...prevFormData, [name]: value }));
+  };
 
   const handleButton = (e) => {
     e.preventDefault();
- 
-    // const API = "https://blog-server-oxr9.onrender.com/user/login";
-    // const API = "http://localhost:4040/user/login"
-    // console.log(email,password);
-    const API = LoginApi
-    // const API = localhostLogin
 
-    if (email && password) {
-      // console.log("if condition");
+    const API = LoginApi;
+
+    if (formData.email && formData.password) {
       axios
-        .post(API,{email,password})
+        .post(API, formData)
         .then((res) => {
-          //     // alert("User registered");
-          console.log(res.data);
-          if(res.data.email){
-
-          // console.log("if condition",res.data);
+          if (res.data.email) {
             localStorage.setItem("token", res.data.token);
-            localStorage.setItem("name",res.data.name)
-            localStorage.setItem("id",res.data._id)
-            navigate("/",{replace:true});
-            setStore(res.data);
-            // setEmail()
-            // setPassword("")
-            // console.log(res.data);
-          }else{
-            // console.log("else statement", email,password);
+            localStorage.setItem("name", res.data.name);
+            localStorage.setItem("id", res.data._id);
+            navigate("/", { replace: true });
+            setFormData({ email: "", password: "" });
+          } else {
             setError("Invalid password/email");
-            setEmail("")
-            setPassword("")
-          }         
+            setFormData({ email: "", password: "" });
+          }
         })
         .catch((err) => console.log(err));
     } else {
       setError("Please enter email and password.");
     }
   };
-
-  // useEffect(()=>{
-  // // console.log(store);
-  // },[store])
 
   const handleBackBtn = () => {
     navigate("/");
@@ -91,32 +55,28 @@ function Login() {
           <div className="logComCon">
             <img
               className="lockImg"
-              src="https://www.freeiconspng.com/thumbs/secure-icon-png/lock-icon-17.png"
+              src="https://cdn3.vectorstock.com/i/1000x1000/00/47/lock-icon-vector-13820047.jpg"
               alt="Locked"
             />
             <div className="Logcont1">
-              {/* <label htmlFor="email">Email:</label> */}
               <input
                 className="lLoginInp"
                 type="email"
                 name="email"
-                // onChange={handleChange}
-                onChange={handleEmail}
-                value={email}
+                onChange={handleInputChange}
+                value={formData.email}
                 placeholder="Enter your email"
                 required
               />
             </div>
 
             <div className="Logcont2">
-              {/* <label htmlFor="password">Password:</label> */}
               <input
                 className="lLoginInp"
                 type="password"
                 name="password"
-                value={password}
-                // onChange={handleChange}
-                onChange={handlePassword}
+                value={formData.password}
+                onChange={handleInputChange}
                 placeholder="Enter your password"
                 required
               />
@@ -127,7 +87,7 @@ function Login() {
             </button>
             <div className="signupRoute">
               {" "}
-              <NavLink to="/signup"> Don't have an acoount? signup</NavLink>
+              <NavLink to="/signup"> Don't have an account? Sign up</NavLink>
             </div>
           </div>
         </div>
